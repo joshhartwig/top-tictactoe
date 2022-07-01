@@ -1,0 +1,11 @@
+.tt-content {
+    display: flex;
+    width: 50%;
+}
+
+.tt-grid-container {
+    display: grid;
+    background-color: aquamarine;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(3,auto);
+}
