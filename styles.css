@@ -1,6 +1,7 @@
 .tt-content {
     display: flex;
     width: 50%;
+    justify-content: center;
 }
 
 .tt-grid-container {

@@ -1,9 +1,15 @@
+
+
+
+
+
 // module pattern for game
 let Game = (function (){
     let Game = {};
     //let _privateMethod = function(){}
 
     //Game.PublicMethod = function(){}
+    
     return Game;
 })();
 
