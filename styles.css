@@ -1,12 +1,49 @@
+.tt-header {
+    height: 20%;
+}
+
 .tt-content {
     display: flex;
-    width: 50%;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tt-content-instructions {
+    width: 30%;
+}
+
+.tt-form {
+    margin-top: 3em;
+    margin-bottom: 3em;
 }
 
 .tt-grid-container {
+    display: flex;
+    width: auto;
+    height: auto;
+    background-color: #f9f9f9;
+    border-radius: 25px;
+    box-shadow: 2px 4px #CDF0EA;
+    justify-content: center;
+    
+}
+
+.tt-gameboard {
     display: grid;
-    background-color: aquamarine;
+    grid-gap: .5em;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    margin-left: 3em;
+    margin-right: 3em;
     grid-template-columns: repeat(3,auto);
     grid-template-rows: repeat(3,auto);
 }
+
+[class^='grid-item'] {
+    display: grid;
+    height: 5em;
+    width: 5em;
+    align-items: center;
+    justify-content: center;
+    outline: 3px dashed #f90;
+  }
