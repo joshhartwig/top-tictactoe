@@ -10,6 +10,8 @@ function startGame(name){
     disableButton();    // disable button so you can start game mid game
     currentPlayer = name; // capture player's name
     let gridSize = gridHeight * gridWidth; // set gameboard size and create it
+
+    // populate array and update display
     for (i = 1; i < gridSize + 1; i++){
         gameboard.push(createZoneFactory(i,'empty'));
     }
@@ -38,8 +40,6 @@ function selectZone(num,player){
         console.log(`${num} by ${player} is not a valid and currently in play by ${gameboard[num].owner}`);
         return false;
     }
-
-
 }
 
 function createZoneFactory(area, owner){
@@ -73,7 +73,9 @@ function updateDisplay(){
 //check for win
 //next computer makes a select zone random call
 
-
+//TODO: Check if Winner
+//TODO: If not Computer plays (for now pick random)
+//TODO: Check if Winner
 
 
 
