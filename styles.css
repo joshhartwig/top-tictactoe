@@ -46,4 +46,12 @@
     align-items: center;
     justify-content: center;
     outline: 3px dashed #f90;
-  }
+}
+
+#tt-winner {
+    display: none;
+}
+
+#tt-results {
+    display: none;
+}
