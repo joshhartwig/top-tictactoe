@@ -1,15 +1,32 @@
+:root {
+    font-size: 16px;
+    font-family: 'Lobster', cursive;
+    --bgcolor: #1D3557;
+    --bgheader:#F1FAEE;
+    --bgfont: #E63946;
+}
+
 .tt-header {
     height: 20%;
+    background-color: var(--bgheader);
 }
 
 .tt-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--bgcolor);
+    height: 100vh;
+}
+
+.tt-content-header {
+    font-size: 4em;
+    color:var(--bgfont)
 }
 
 .tt-content-instructions {
     width: 30%;
+    font-size: 1.5em;
 }
 
 .tt-form {

@@ -139,7 +139,9 @@ let game = (() => {
                     players[currentPlayer].score++; // increment our winner's score
                     displayWinner(players[currentPlayer]);  // display winner text
                     updateResults();
+                    gameBoard.zones = Array(9).fill('');
                     reset();    // reset the board and remove winner text
+                    gameBoard.draw();
                     return;
                 }
                 currentPlayer === 1 ? currentPlayer = 0 : currentPlayer = 1; // if current player is equal to 1, set it back to 0, else set it to 1
