@@ -46,7 +46,9 @@ let gameBoard = (() => {
         }
     };
     function reset(){
-        zones = Array(9).fill('');
+        for (let i = 0; i < zones.length; i++) {
+            zones[i] = '';
+        }
     }
     return {
         gameBoard, draw, debug, reset, zones
