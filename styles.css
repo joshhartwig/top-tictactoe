@@ -1,14 +1,20 @@
 :root {
     font-size: 16px;
     font-family: 'Lobster', cursive;
-    --bgcolor: #1D3557;
-    --bgheader:#F1FAEE;
-    --bgfont: #E63946;
+    --bgcolor: #06283D;
+    --bgfont: #47B5FF;
+    --bggridcontainer: #DFF6FF;
+    --gridcolor: #47B5FF;
+    --txtcolor: black;
+    /*--txtcolor: #DFF6FF; */
+    /* font-family: 'Permanent Marker', cursive;*/
+    /* https://colorhunt.co/palette/06283d1363df47b5ffdff6ff */
 }
 
-.tt-header {
-    height: 20%;
-    background-color: var(--bgheader);
+body {
+    height: 100vh;
+    background-color: var(--bgcolor);
+    color: var(--txtcolor);
 }
 
 .tt-content {
@@ -16,7 +22,7 @@
     flex-direction: column;
     align-items: center;
     background-color: var(--bgcolor);
-    height: 100vh;
+    height: 100%;
 }
 
 .tt-content-header {
@@ -38,7 +44,7 @@
     display: flex;
     width: auto;
     height: auto;
-    background-color: #f9f9f9;
+    background-color: var(--bggridcontainer);
     border-radius: 25px;
     box-shadow: 2px 4px #CDF0EA;
     justify-content: center;
@@ -56,13 +62,13 @@
     grid-template-rows: repeat(3,auto);
 }
 
-[class^='grid-item'] {
+.grid-item {
     display: grid;
     height: 5em;
     width: 5em;
     align-items: center;
     justify-content: center;
-    outline: 3px dashed #f90;
+    outline: 1px dashed var(--gridcolor);
 }
 
 #tt-winner {
