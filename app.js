@@ -1,7 +1,4 @@
-
-
-
-// gameboard
+// object manages state of the gameboard
 let gameBoard = (() => {
     let gameBoard = {};
     let zones = Array(9).fill('');
@@ -13,7 +10,8 @@ let gameBoard = (() => {
             const zone = document.createElement('div');
             zone.className = 'grid-item';
             zone.setAttribute('data-id',`${i}`);
-            zone.innerText = zones[i];
+            //zone.innerText = zones[i];
+            zone.innerHTML = `<span class='grid-text'>${zones[i]}</span>`;
             
             // if zone has no symbol set, add an onclick so it can be set
             // will keep track of current player in global scope
@@ -59,6 +57,7 @@ const createPlayer = (name, symbol, score) => {
     return {name, symbol, score, describe}
   }
 
+// controls the overall game flow
 let game = (() => {
     let game = {};
     const winningCombos = [
@@ -109,8 +108,9 @@ let game = (() => {
         const results = document.getElementById('tt-results');
         results.innerHTML = ''; // clear out previous results
         results.style.display = 'block';
+        results.classList.add('tt-results-info');
         results.innerHTML = 
-        `<ul>
+        `<ul class='tt-results-info'>
             <li>player's score is ${player1.score}</li>
             <li>computer's score is ${player2.score}</li>
         </ul>
@@ -121,7 +121,8 @@ let game = (() => {
     function displayWinner(player){
         const winnerText = document.getElementById('tt-winner');
         winnerText.style.display = "block";
-        winnerText.innerText = `${player.name} has won the match!`
+        winnerText.classList.add('tt-winner-info');
+        winnerText.innerText = `${player.name} has won the match!`;
     }
 
     function play(num){

@@ -4,6 +4,7 @@
     --bgcolor: #06283D;
     --bgfont: #47B5FF;
     --bggridcontainer: #DFF6FF;
+    --bgcontainertext: #DFF6FF;
     --gridcolor: #47B5FF;
     --txtcolor: black;
     /*--txtcolor: #DFF6FF; */
@@ -30,6 +31,10 @@ body {
     color:var(--bgfont)
 }
 
+.instructions {
+    color: var(--bgcontainertext);
+}
+
 .tt-content-instructions {
     width: 30%;
     font-size: 1.5em;
@@ -48,16 +53,17 @@ body {
     border-radius: 25px;
     box-shadow: 2px 4px #CDF0EA;
     justify-content: center;
+    margin-bottom: 3em;
     
 }
 
 .tt-gameboard {
     display: grid;
     grid-gap: .5em;
-    margin-top: 3em;
-    margin-bottom: 3em;
-    margin-left: 3em;
-    margin-right: 3em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
     grid-template-columns: repeat(3,auto);
     grid-template-rows: repeat(3,auto);
 }
@@ -69,10 +75,29 @@ body {
     align-items: center;
     justify-content: center;
     outline: 1px dashed var(--gridcolor);
+    
+}
+
+.grid-text {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3em;
+}
+
+.tt-announements {
+    margin-top: 3em;
+}
+
+.tt-results-info {
+    list-style: none;
+    color: var(--bgcontainertext);
 }
 
 #tt-winner {
     display: none;
+}
+
+.tt-winner-info {
+    color: var(--bgcontainertext);
 }
 
 #tt-results {
