@@ -3,6 +3,7 @@
 
 // gameboard
 let gameBoard = (() => {
+    let gameBoard = {};
     let zones = Array(9).fill('');
     function draw(){
         // hook the container and draw the grid zones
@@ -48,7 +49,7 @@ let gameBoard = (() => {
         zones = Array(9).fill('');
     }
     return {
-        draw, debug, reset, zones
+        gameBoard, draw, debug, reset, zones
     }
 })();
 
@@ -101,7 +102,6 @@ let game = (() => {
         setTimeout(() => {
             document.getElementById('tt-winner').style.display = 'none';
         }, 2000);
-        gameBoard.reset();
     }
 
     // update's the results
@@ -139,8 +139,8 @@ let game = (() => {
                     players[currentPlayer].score++; // increment our winner's score
                     displayWinner(players[currentPlayer]);  // display winner text
                     updateResults();
-                    gameBoard.zones = Array(9).fill('');
-                    reset();    // reset the board and remove winner text
+                    reset();  // remove winner text
+                    gameBoard.reset();  //reset gameboard
                     gameBoard.draw();
                     return;
                 }
