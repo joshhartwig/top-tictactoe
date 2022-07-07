@@ -46,9 +46,7 @@ let gameBoard = (() => {
         }
     };
     function reset(){
-        for (let i = 0; i < zones.length; i++) {
-            zones[i] = '';
-        }
+        zones.fill('');
     }
     return {
         gameBoard, draw, debug, reset, zones
@@ -107,8 +105,7 @@ let game = (() => {
     }
 
     // update's the results
-    function updateResults(){
-        
+    function updateResults(){ 
         const results = document.getElementById('tt-results');
         results.innerHTML = ''; // clear out previous results
         results.style.display = 'block';
