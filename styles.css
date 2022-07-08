@@ -1,105 +1,103 @@
 :root {
-    font-size: 16px;
-    font-family: 'Lobster', cursive;
-    --bgcolor: #06283D;
-    --bgfont: #47B5FF;
-    --bggridcontainer: #DFF6FF;
-    --bgcontainertext: #DFF6FF;
-    --gridcolor: #47B5FF;
-    --txtcolor: black;
-    /*--txtcolor: #DFF6FF; */
-    /* font-family: 'Permanent Marker', cursive;*/
-    /* https://colorhunt.co/palette/06283d1363df47b5ffdff6ff */
+  font-size: 16px;
+  font-family: 'Lobster', cursive;
+  --bgcolor: #06283d;
+  --bgfont: #47b5ff;
+  --bggridcontainer: #dff6ff;
+  --bgcontainertext: #dff6ff;
+  --gridcolor: #47b5ff;
+  --txtcolor: black;
+  /*--txtcolor: #DFF6FF; */
+  /* font-family: 'Permanent Marker', cursive;*/
+  /* https://colorhunt.co/palette/06283d1363df47b5ffdff6ff */
 }
 
 body {
-    height: 100vh;
-    background-color: var(--bgcolor);
-    color: var(--txtcolor);
+  height: 100vh;
+  background-color: var(--bgcolor);
+  color: var(--txtcolor);
 }
 
 .tt-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--bgcolor);
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bgcolor);
+  height: 100%;
 }
 
 .tt-content-header {
-    font-size: 4em;
-    color:var(--bgfont)
+  font-size: 4em;
+  color: var(--bgfont);
 }
 
 .instructions {
-    color: var(--bgcontainertext);
+  color: var(--bgcontainertext);
 }
 
 .tt-content-instructions {
-    width: 30%;
-    font-size: 1.5em;
+  width: 30%;
+  font-size: 1.5em;
 }
 
 .tt-form {
-    margin-top: 3em;
-    margin-bottom: 3em;
+  margin-top: 3em;
+  margin-bottom: 3em;
 }
 
 .tt-grid-container {
-    display: flex;
-    width: auto;
-    height: auto;
-    background-color: var(--bggridcontainer);
-    border-radius: 25px;
-    box-shadow: 2px 4px #CDF0EA;
-    justify-content: center;
-    margin-bottom: 3em;
-    
+  display: flex;
+  width: auto;
+  height: auto;
+  background-color: var(--bggridcontainer);
+  border-radius: 25px;
+  box-shadow: 2px 4px #cdf0ea;
+  justify-content: center;
+  margin-bottom: 3em;
 }
 
 .tt-gameboard {
-    display: grid;
-    grid-gap: .5em;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    margin-left: 2em;
-    margin-right: 2em;
-    grid-template-columns: repeat(3,auto);
-    grid-template-rows: repeat(3,auto);
+  display: grid;
+  grid-gap: 0.5em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, auto);
 }
 
 .grid-item {
-    display: grid;
-    height: 5em;
-    width: 5em;
-    align-items: center;
-    justify-content: center;
-    outline: 1px dashed var(--gridcolor);
-    
+  display: grid;
+  height: 5em;
+  width: 5em;
+  align-items: center;
+  justify-content: center;
+  outline: 1px dashed var(--gridcolor);
 }
 
 .grid-text {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 3em;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3em;
 }
 
 .tt-announements {
-    margin-top: 3em;
+  margin-top: 3em;
 }
 
 .tt-results-info {
-    list-style: none;
-    color: var(--bgcontainertext);
+  list-style: none;
+  color: var(--bgcontainertext);
 }
 
 #tt-winner {
-    display: none;
+  display: none;
 }
 
 .tt-winner-info {
-    color: var(--bgcontainertext);
+  color: var(--bgcontainertext);
 }
 
 #tt-results {
-    display: none;
+  display: none;
 }
