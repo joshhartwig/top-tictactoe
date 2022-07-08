@@ -73,7 +73,7 @@ body {
   width: 5em;
   align-items: center;
   justify-content: center;
-  outline: 1px dashed var(--gridcolor);
+  outline: 2px dashed var(--gridcolor);
 }
 
 .grid-text {

@@ -2,8 +2,10 @@
 //TODO: the button click can capture name from form if needed. 
 //TODO: the click should trigger picking a zone, checking for winner then ai picking a zone
 //TODO: can we make the ai easy or hard based on slider? easy should pick open spots based on random, hard should always try to choose next number from list of win strats
+//TODO: computer ai = easy ? random pick, hard should be a pick from known win patterns or else random
 //TODO: change the layout to have the winner details on the right side of the grid and who is currently playing on the left
 //TODO: fix the draw mechanism. It does not currently exist
+//TODO: clicking play sets global boolean to true game is in play and adds the handlers via draw
 
 // object manages state of the gameboard
 let gameBoard = (() => {
