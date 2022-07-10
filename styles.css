@@ -1,3 +1,4 @@
+/* --------- GENERAL --------------- */
 :root {
   font-size: 16px;
   font-family: 'Lobster', cursive;
@@ -18,6 +19,7 @@ body {
   color: var(--txtcolor);
 }
 
+
 .tt-content {
   display: flex;
   flex-direction: column;
@@ -25,6 +27,8 @@ body {
   background-color: var(--bgcolor);
   height: 100%;
 }
+
+/* --------- HEADER --------------- */
 
 .tt-content-header {
   font-size: 4em;
@@ -40,9 +44,9 @@ body {
   font-size: 1.5em;
 }
 
-.tt-form {
-  margin-top: 3em;
-  margin-bottom: 3em;
+.tt-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
 }
 
 .tt-grid-container {

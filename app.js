@@ -11,6 +11,22 @@
 let gameBoard = (() => {
   let gameBoard = {};
   let zones = Array(9).fill('');
+  function setZoneSymbol(num,symbol){
+    if(zones[num] === ''){
+      zones[num] = symbol;
+      return true;
+    }
+    return false;
+  }
+  function freeZones(){
+    let results = [];
+    for (i = 0; i < zones.length; i++){
+      if(zones[i] === ''){
+        results.push(i);
+      }
+    }
+    return results;
+  }
   function draw() {
     // hook the container and draw the grid zones
     const container = document.getElementById('tt-gameboard');
@@ -55,6 +71,7 @@ let gameBoard = (() => {
   }
   return {
     gameBoard,
+    freeZones,
     draw,
     debug,
     reset,
@@ -146,6 +163,7 @@ let game = (() => {
       console.log(`error ${num} is an invalid number`);
     } else {
       // num is valid
+      //TODO: move set zone to gameboard as method (ex gameboard.setZone(num,symbox) returns true)
       if (gameBoard.zones[num] === '') {
         // zone is empty
         gameBoard.zones[num] = players[currentPlayer].symbol; // set to current players symbol
@@ -161,6 +179,7 @@ let game = (() => {
           gameBoard.draw();
           return;
         }
+        // else computer picks open number
         currentPlayer === 1 ? (currentPlayer = 0) : (currentPlayer = 1); // if current player is equal to 1, set it back to 0, else set it to 1
       }
     }
