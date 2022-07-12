@@ -72,6 +72,7 @@ let gameBoard = (() => {
   return {
     gameBoard,
     freeZones,
+    setZoneSymbol,
     draw,
     debug,
     reset,
@@ -133,6 +134,7 @@ let game = (() => {
     setTimeout(() => {
       document.getElementById('tt-winner').style.display = 'none';
     }, 2000);
+    currentPlayer = 0;
   }
 
   // update's the results
@@ -171,18 +173,43 @@ let game = (() => {
 
         // if a win is detected
         if (checkForWin()) {
+          setTimeout(() => {
+            players[currentPlayer].score++; // increment our winner's score
+            displayWinner(players[currentPlayer]); // display winner text
+            updateResults();
+            reset(); // remove winner text
+            gameBoard.reset(); //reset gameboard
+            gameBoard.draw();
+            return;
+          }, 1000); 
+        }
+        // else computer picks open number
+        currentPlayer === 1 ? (currentPlayer = 0) : (currentPlayer = 1); // if current player is equal to 1, set it back to 0, else set it to 1
+        computerPlay();
+      }
+    }
+  }
+  function computerPlay(){
+      let rnd = getRandomInt(0,gameBoard.freeZones().length); // generate a random number between 0 and the size of the avail zones
+      let availZones = gameBoard.freeZones();
+      const num = availZones[rnd]; // pick a number from one of the free zones
+      gameBoard.setZoneSymbol(num,players[currentPlayer].symbol); // grab a free zone with that number 
+      gameBoard.draw();
+
+      if (checkForWin()) {
+        setTimeout(() => {
           players[currentPlayer].score++; // increment our winner's score
           displayWinner(players[currentPlayer]); // display winner text
           updateResults();
           reset(); // remove winner text
           gameBoard.reset(); //reset gameboard
           gameBoard.draw();
-          return;
-        }
-        // else computer picks open number
-        currentPlayer === 1 ? (currentPlayer = 0) : (currentPlayer = 1); // if current player is equal to 1, set it back to 0, else set it to 1
+        }, 1000); 
       }
-    }
+    currentPlayer === 1 ? (currentPlayer = 0) : (currentPlayer = 1);
+  }
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
   console.log('invoked game function');
   return {
